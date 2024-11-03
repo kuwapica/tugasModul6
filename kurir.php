@@ -86,7 +86,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM kurir ORDER BY id ASC");
 
     <!-- Update Section -->
     <div id="update" class="content <?php echo (isset($_GET['aksi']) && $_GET['aksi'] == 'update') ? 'active' : ''; ?>">
-        <h1>Update kurir</h1>
+        <h1>Ubah kurir</h1>
         <form action="kurir.php" method="post">
             <table class="first">
                 <tr>
@@ -102,7 +102,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM kurir ORDER BY id ASC");
                     <td><input type="text" name="nomor_hp" id="nomor_hp" value="<?php echo $nomor_hp; ?>" required></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" id="submitButton" name="update" value="Update"></td>
+                    <td><input type="submit" id="submitButton" name="update" value="Ubah"></td>
                     <td><input type="reset" name="cancel" value="Batal" onclick="resetForm()"></td>
                 </tr>
             </table>
@@ -127,8 +127,8 @@ $result = mysqli_query($koneksi, "SELECT * FROM kurir ORDER BY id ASC");
             echo "<td>".$row['nama']."</td>";
             echo "<td>".$row['nomor_hp']."</td>";
             echo "<td>
-                <a href='kurir.php?aksi=update&id=".$row['id']."'>Edit</a> | 
-                <a href='kurir.php?aksi=delete&id=".$row['id']."'>Delete</a>
+                <a href='kurir.php?aksi=update&id=".$row['id']."'>Ubah</a> | 
+                <a href='kurir.php?aksi=delete&id=".$row['id']."'>Hapus</a>
             </td>";
             echo "</tr>";
         }

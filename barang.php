@@ -86,7 +86,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id ASC");
 
     <!-- Update Section -->
     <div id="update" class="content <?php echo (isset($_GET['aksi']) && $_GET['aksi'] == 'update') ? 'active' : ''; ?>">
-        <h1>Update Barang</h1>
+        <h1>Ubah Barang</h1>
         <form action="barang.php" method="post">
             <table class="first">
                 <tr>
@@ -102,7 +102,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id ASC");
                     <td><input type="text" name="harga" id="harga" value="<?php echo $harga; ?>" required></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" id="submitButton" name="update" value="Update"></td>
+                    <td><input type="submit" id="submitButton" name="update" value="Ubah"></td>
                     <td><input type="reset" name="cancel" value="Batal" onclick="resetForm()"></td>
                 </tr>
             </table>
@@ -127,8 +127,8 @@ $result = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id ASC");
             echo "<td>".$row['nama']."</td>";
             echo "<td>".$row['harga']."</td>";
             echo "<td>
-                <a href='barang.php?aksi=update&id=".$row['id']."'>Edit</a> | 
-                <a href='barang.php?aksi=delete&id=".$row['id']."'>Delete</a>
+                <a href='barang.php?aksi=update&id=".$row['id']."'>Ubah</a> | 
+                <a href='barang.php?aksi=delete&id=".$row['id']."'>Hapus</a>
             </td>";
             echo "</tr>";
         }
